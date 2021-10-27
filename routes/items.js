@@ -1,5 +1,4 @@
 // const items = require('../Items')
-const items = require('../db/db.json')
 const {
   getItems,
   getItem,

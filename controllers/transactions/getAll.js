@@ -6,6 +6,7 @@ async function getAll(req, reply) {
   reply.code(200).send({
     status: 'success',
     code: 200,
+    dataLenth: transactions.length,
     data: transactions,
     message: 'Transactions from DB successfully collected',
   })
