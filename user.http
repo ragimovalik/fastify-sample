@@ -1,0 +1,21 @@
+### USER
+
+### CREATE NEW USER
+POST http://localhost:3040/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Natali", 
+    "email": "nat@gmail.com", 
+    // "phone": "067 111-88-00", 
+    "password": "123asd"
+    }
+
+### SIGNIN
+POST http://localhost:3040/users/signin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "nat@gmail.com", 
+    "password": "123asd"
+}

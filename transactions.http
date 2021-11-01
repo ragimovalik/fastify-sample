@@ -1,0 +1,29 @@
+### TRANSACTION TEST
+POST http://localhost:3040/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+"isIncome": false, 
+"value": 200, 
+"description": "pizza",
+ "categorySpending": "Food"
+// "categoryIncoming": "salary"
+}
+
+### GET ALL TRANSACTIONS
+GET http://localhost:3040/transactions HTTP/1.1
+
+### GET TRANSACTION BY ID
+GET http://localhost:3040/transactions/61771bbfdfd8e7121eb64d5d HTTP/1.1
+
+### DELETE TRANSACTION BY ID
+DELETE http://localhost:3040/transactions/6179a1541f9e7ffde15a560a HTTP/1.1
+
+### UPDATE TRANSACTION BY ID
+PATCH http://localhost:3040/transactions/6179a2673339e3dbb77209b5 HTTP/1.1
+Content-Type: application/json
+
+{
+"description": "Pool", 
+"categorySpending": "Health"
+}
