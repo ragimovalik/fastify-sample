@@ -1,5 +1,6 @@
 const { BadRequest } = require('http-errors')
 const User = require('../../models/user')
+
 const jwt = require('jsonwebtoken')
 
 async function signin(req, reply) {

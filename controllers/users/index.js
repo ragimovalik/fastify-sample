@@ -1,7 +1,10 @@
 const signup = require('./signup')
 const signin = require('./signin')
+const getCurrent = require('./current')
+const signout = require('./signout')
+const updateUser = require('./update')
 
-module.exports = { signup, signin }
+module.exports = { signup, signin, getCurrent, signout, updateUser }
 
 /*
 

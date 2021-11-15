@@ -5,8 +5,8 @@ POST http://localhost:3040/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Natali", 
-    "email": "nat@gmail.com", 
+    "name": "Mary", 
+    "email": "mary@gmail.com", 
     // "phone": "067 111-88-00", 
     "password": "123asd"
     }
@@ -16,6 +16,27 @@ POST http://localhost:3040/users/signin HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "nat@gmail.com", 
+    "email": "mary@gmail.com",
     "password": "123asd"
+}
+
+# {
+#     "email": "nat@gmail.com", 
+#     "password": "123asd"
+# }
+
+### CURRENT USER
+GET http://localhost:3040/users/current HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNjk4MDE2NywiZXhwIjoxNjM3MjM5MzY3fQ.iQwHjMm72WHMiSkO3_JKLm4mKGELYk1Hl3Q8_GPSb7k
+
+### SIGNOUT
+GET http://localhost:3040/users/signout HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2FiZGU2ZmQ1ZWM2OTlkMDMzZGViOSIsImlhdCI6MTYzNjk3NzEwNywiZXhwIjoxNjM3MjM2MzA3fQ.ZBtAsAlms8UOuxuaKdiQdOJQwZlAJS7lURYytQwzkZ8
+
+### UPDATE USER
+PUT http://localhost:3040/users/619255a32a49f660ee49af23 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNjk4MDE2NywiZXhwIjoxNjM3MjM5MzY3fQ.iQwHjMm72WHMiSkO3_JKLm4mKGELYk1Hl3Q8_GPSb7k
+
+{
 }

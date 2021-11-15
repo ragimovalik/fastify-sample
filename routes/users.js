@@ -1,9 +1,10 @@
+const { fastify } = require('fastify')
 const {
-  // getCurrentUser,
+  getCurrent,
   signup,
   signin,
-  // signout,
-  // updateUser,
+  signout,
+  updateUser,
 } = require('../controllers/users')
 
 const User = {
@@ -75,12 +76,85 @@ const signinOpts = {
   handler: signin,
 }
 
+const getCurrentUserOpts = {
+  schema: {
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          status: { type: 'string' },
+          code: { type: 'number' },
+          data: {
+            type: 'object',
+            properties: {
+              name: { type: 'string' },
+              email: { type: 'string' },
+            },
+          },
+          message: { type: 'string' },
+        },
+      },
+    },
+  },
+  preHandler: require('../plugins/isAuth'),
+  handler: getCurrent,
+}
+
+const signoutOpts = {
+  schema: {
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          status: { type: 'string' },
+          code: { type: 'number' },
+          message: { type: 'string' },
+        },
+      },
+    },
+  },
+  preHandler: require('../plugins/isAuth'),
+  handler: signout,
+}
+
+const updateUserOpts = {
+  schema: {
+    body: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        email: { type: 'string' },
+        phone: { type: 'string' },
+      },
+    },
+    params: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+      },
+    },
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          status: { type: 'string' },
+          code: { type: 'string' },
+          data: User,
+          message: { type: 'string' },
+        },
+      },
+    },
+  },
+  preHandler: require('../plugins/isAuth'),
+  handler: updateUser,
+}
+
 async function routes(fastify, opts, done) {
   fastify.post('/users', signupOpts)
   fastify.post('/users/signin', signinOpts)
-  // fastify.get('/users', getCurrentUser)
-  // fastify.put('/users/:id', updateUser)
-  // fastify.delete('/users/:id', deleteUserOpts)
+  fastify.get('/users/current', getCurrentUserOpts)
+  fastify.get('/users/signout', signoutOpts)
+  fastify.put('/users/:id', updateUserOpts)
 
   done()
 }
