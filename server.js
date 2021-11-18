@@ -10,6 +10,8 @@ fastify.register(require('fastify-swagger'), {
   },
 })
 
+fastify.register(require('fastify-cors'))
+
 const { PORT, DB_HOST } = process.env
 
 fastify.register(require('./routes/users'))
@@ -32,10 +34,6 @@ fastify.register(require('./routes/transactions'))
 //     console.log('Everything has been loaded')
 //   })
 
-fastify.get('/', (req, reply) => {
-  reply.send({ welcome: 'If you see this message, everything goes well' })
-})
-
 const start = async () => {
   try {
     await mongoose.connect(DB_HOST, {
@@ -51,5 +49,9 @@ const start = async () => {
     process.exit(1)
   }
 }
+
+fastify.get('/', (req, reply) => {
+  reply.send({ welcome: 'If you see this message, everything goes well' })
+})
 
 start()
