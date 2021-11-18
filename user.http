@@ -16,7 +16,7 @@ POST http://localhost:3040/users/signin HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "mary@gmail.com",
+    "email": "m@ukr.net",
     "password": "123asd"
 }
 
@@ -27,16 +27,15 @@ Content-Type: application/json
 
 ### CURRENT USER
 GET http://localhost:3040/users/current HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNjk4MDE2NywiZXhwIjoxNjM3MjM5MzY3fQ.iQwHjMm72WHMiSkO3_JKLm4mKGELYk1Hl3Q8_GPSb7k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNzAwNjk5NywiZXhwIjoxNjM3MjY2MTk3fQ.INcsUPHkqv-t3caO6z9nOVVvJdeLA2FisSpqaJ0WLNg
 
 ### SIGNOUT
 GET http://localhost:3040/users/signout HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2FiZGU2ZmQ1ZWM2OTlkMDMzZGViOSIsImlhdCI6MTYzNjk3NzEwNywiZXhwIjoxNjM3MjM2MzA3fQ.ZBtAsAlms8UOuxuaKdiQdOJQwZlAJS7lURYytQwzkZ8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNjk4MDE2NywiZXhwIjoxNjM3MjM5MzY3fQ.iQwHjMm72WHMiSkO3_JKLm4mKGELYk1Hl3Q8_GPSb7k
 
 ### UPDATE USER
 PUT http://localhost:3040/users/619255a32a49f660ee49af23 HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNjk4MDE2NywiZXhwIjoxNjM3MjM5MzY3fQ.iQwHjMm72WHMiSkO3_JKLm4mKGELYk1Hl3Q8_GPSb7k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI1NWEzMmE0OWY2NjBlZTQ5YWYyMyIsImlhdCI6MTYzNzAwNjk5NywiZXhwIjoxNjM3MjY2MTk3fQ.INcsUPHkqv-t3caO6z9nOVVvJdeLA2FisSpqaJ0WLNg
 
-{
-}
+{"name": "Maria", "email": "mary@ukr.net"}

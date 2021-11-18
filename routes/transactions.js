@@ -16,7 +16,7 @@ const transaction = {
     categorySpending: { type: 'string' },
     description: { type: 'string' },
     value: { type: 'string' },
-    _id: { type: 'string' },
+    // _id: { type: 'string' },
   },
 }
 
@@ -61,6 +61,7 @@ const addOneOpts = {
       },
     },
   },
+  preHandler: require('../plugins/isAuth'),
   handler: addOne,
 }
 
@@ -83,6 +84,7 @@ const getAllOpts = {
       },
     },
   },
+  preHandler: require('../plugins/isAuth'),
   handler: getAll,
 }
 
@@ -102,6 +104,7 @@ const getByIdOpts = {
       },
     },
   },
+  preHandler: require('../plugins/isAuth'),
   handler: getById,
 }
 
@@ -121,6 +124,7 @@ const deleteByIdOpts = {
       },
     },
   },
+  preHandler: require('../plugins/isAuth'),
   handler: deleteById,
 }
 
@@ -151,6 +155,7 @@ const updateByIdOpts = {
       },
     },
   },
+  preHandler: require('../plugins/isAuth'),
   handler: updateById,
 }
 

@@ -23,7 +23,7 @@ const signupOpts = {
       type: 'object',
       required: ['name', 'email', 'password'],
       properties: {
-        name: { type: 'string' },
+        name: { type: 'string', minLength: 2, maxLength: 15 },
         email: { type: 'string' },
         phone: { type: 'string' },
         password: { type: 'string', minLength: 6 },
@@ -126,6 +126,11 @@ const updateUserOpts = {
         email: { type: 'string' },
         phone: { type: 'string' },
       },
+      anyOf: [
+        { required: ['name'] },
+        { required: ['email'] },
+        { required: ['phone'] },
+      ],
     },
     params: {
       type: 'object',

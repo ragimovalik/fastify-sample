@@ -1,4 +1,4 @@
-const { Schema, model, SchemaTypes, now } = require('mongoose')
+const { Schema, model, SchemaTypes } = require('mongoose')
 
 const transactionsSchema = Schema(
   {
@@ -39,7 +39,7 @@ const transactionsSchema = Schema(
     },
     owner: {
       type: SchemaTypes.ObjectId,
-      ref: 'user',
+      ref: 'User',
     },
     operationDate: {
       type: Date,
