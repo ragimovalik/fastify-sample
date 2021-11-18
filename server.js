@@ -33,8 +33,8 @@ const start = async () => {
   }
 }
 
-// fastify.get('/', (req, reply) => {
-//   reply.send({ welcome: 'If you see this message, everything goes well' })
-// })
+fastify.get('/', (req, reply) => {
+  reply.send({ welcome: 'If you see this message, everything goes well' })
+})
 
 start()
