@@ -7,8 +7,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "start:dev": "nodemon server.js"
+    "start": "NODE_ENV=production node server.js",
+    "start:dev": "NODE_ENV=development nodemon server.js"
   },
   "keywords": [],
   "author": "@ragimovalik <ragimovalik@gmail.com>",
