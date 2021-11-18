@@ -26,7 +26,7 @@ const start = async () => {
 
     fastify.log.info('Mongoose connected')
 
-    await fastify.listen(PORT, () => console.log(`Port ${PORT} used`))
+    await fastify.listen(PORT, '0.0.0.0')
   } catch (error) {
     fastify.log.error(error.message)
     process.exit(1)
