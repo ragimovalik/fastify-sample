@@ -12,7 +12,7 @@ fastify.register(require('fastify-swagger'), {
 
 fastify.register(require('fastify-cors'))
 
-const { PORT, DB_HOST } = process.env
+const { PORT = 3040, DB_HOST } = process.env
 
 fastify.register(require('./routes/users'))
 fastify.register(require('./routes/transactions'))
@@ -26,7 +26,7 @@ const start = async () => {
 
     fastify.log.info('Mongoose connected')
 
-    await fastify.listen(PORT || 5000, () => console.log(`Port ${PORT} used`))
+    await fastify.listen(PORT, () => console.log(`Port ${PORT} used`))
   } catch (error) {
     fastify.log.error(error.message)
     process.exit(1)
